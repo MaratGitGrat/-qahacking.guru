@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">time</span>
+
+<span class="s0">from </span><span class="s1">selenium </span><span class="s0">import </span><span class="s1">webdriver</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.chrome.service </span><span class="s0">import </span><span class="s1">Service</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.common.by </span><span class="s0">import </span><span class="s1">By</span>
+
+<span class="s1">s=Service(</span><span class="s2">'C:/Program Files/Google/Chrome/Application/chromedriver.exe'</span><span class="s1">)</span>
+<span class="s1">driver = webdriver.Chrome(service=s)</span>
+<span class="s1">driver.get(</span><span class="s2">&quot;https://idemo.bspb.ru/auth?response_type=code&amp;client_id=1&amp;redirect_uri=https%3A%2F%2Fidemo.bspb.ru%2Flogin%2Fsuccess&amp;prefetch_uri=https%3A%2F%2Fidemo.bspb.ru%2Flogin%2Fprefetch&amp;force_new_session=true&amp;state=%2Freferral-program&quot;</span><span class="s1">)</span>
+<span class="s1">driver.set_window_size(</span><span class="s3">1366</span><span class="s0">,</span><span class="s3">768</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.ID</span><span class="s0">, </span><span class="s2">&quot;login-button&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.ID</span><span class="s0">, </span><span class="s2">&quot;login-otp-button&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.ID</span><span class="s0">, </span><span class="s2">&quot;loans-index&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.ID</span><span class="s0">, </span><span class="s2">&quot;loan-application-btn&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.ID</span><span class="s0">, </span><span class="s2">&quot;mortgage-loan-start&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.calculator-form__row--1SQvL:nth-child(11) .controls__select--3PjRN&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(2)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.calculator-form-field__range-input--i7Q1j &gt; input:nth-child(4)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.calculator-form-field__range-input--i7Q1j &gt; input:nth-child(4)&quot;</span><span class="s1">).send_keys(</span>
+    <span class="s2">&quot;14800000&quot;</span><span class="s1">)</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;creditParams.term&quot;</span><span class="s1">)</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;creditParams.term&quot;</span><span class="s1">)</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;creditParams.term&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;creditParams.term&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;360&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;creditParams.term&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.calculator-form__row--1SQvL:nth-child(14) .controls__select--3PjRN&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(1) &gt; .paragraph__root--1k9A3&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(1)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.calculator-form__calculator-form--3-n1e&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.checkbox__disabled--32t3v &gt; .checkbox__checkbox-text--3RkJt&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.checkbox__disabled--32t3v .checkbox__checkbox-icon--3Zuuz&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">,</span>
+                         <span class="s2">&quot;.calculator-form__checkbox-row--2FqVD:nth-child(20) .checkbox__checkbox-icon--3Zuuz&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">,</span>
+                         <span class="s2">&quot;.calculator-form__checkbox-row--2FqVD:nth-child(23) .checkbox__checkbox-icon--3Zuuz&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">,</span>
+                         <span class="s2">&quot;.calculator-form__checkbox-row--2FqVD:nth-child(22) .checkbox__checkbox-icon--3Zuuz&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;saveCalculator&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.field__right-addons--3kPpX&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(3)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.controls__select--3PjRN&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.controls__select--3PjRN&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;age&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;56&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.controls__select--3PjRN&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(3)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.field__right-addons--3kPpX&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.options__item--2jk5Y:nth-child(6)&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">element = driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;lastName&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;Корн&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;firstName&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;Саня&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;midName&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;Сулейманович&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;phone&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;+7 (933) 333-55-55&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;email&quot;</span><span class="s1">).send_keys(</span><span class="s2">&quot;amam@mail.ru&quot;</span><span class="s1">)</span>
+<span class="s1">driver.find_element(By.CSS_SELECTOR</span><span class="s0">, </span><span class="s2">&quot;.checkbox__checkbox-icon--3Zuuz&quot;</span><span class="s1">).click()</span>
+<span class="s1">driver.find_element(By.NAME</span><span class="s0">, </span><span class="s2">&quot;next&quot;</span><span class="s1">).click()</span>
+<span class="s1">time.sleep(</span><span class="s3">5</span><span class="s1">)</span></pre>
+</body>
+</html>
